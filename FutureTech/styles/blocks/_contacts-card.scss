@@ -1,0 +1,25 @@
+@use "../helpers" as *;
+
+.contacts-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(50, 20);
+
+  &__body {
+    @include flex-column(15);
+
+    align-items: start;
+
+    @include laptop {
+      row-gap: rem(10);
+    }
+
+    @include tablet {
+      padding-left: rem(25);
+    }
+
+    @include mobile {
+      padding-left: rem(50);
+    }
+  }
+}

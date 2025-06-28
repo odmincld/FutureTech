@@ -1,0 +1,48 @@
+@use "../helpers" as *;
+
+.blog-actions {
+  &__list {
+    display: flex;
+
+    column-gap: rem(10);
+
+    @include laptop {
+      column-gap: rem(8);
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    font-size: rem(18);
+    background-color: var(--color-dark-10);
+    border-radius: rem(100);
+    border: var(--border);
+    color: var(--color-dark-60);
+    column-gap: rem(4);
+    padding: rem(8) rem(16);
+
+    @include laptop {
+      column-gap: rem(2);
+      font-size: rem(14);
+      padding: rem(6) rem(12);
+    }
+
+    &.is-active {
+      svg * {
+        fill: var(--color-red);
+        stroke: var(--color-red);
+      }
+    }
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    width: rem(24);
+    color: var(--color-dark-40);
+
+    @include laptop {
+      width: rem(20);
+    }
+  }
+}

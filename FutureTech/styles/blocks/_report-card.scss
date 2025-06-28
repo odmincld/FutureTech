@@ -1,0 +1,42 @@
+@use "../helpers" as *;
+
+.report-card {
+  @include flex-column;
+
+  height: 100%;
+  row-gap: fluid(30, 20);
+
+  &__image {
+    width: fluid(470, 358);
+    border-radius: rem(12);
+    clip-path: inset(rem(2));
+
+    @include laptop {
+      width: fluid(386, 358);
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__body {
+    @include flex-column(14);
+
+    @include laptop {
+      row-gap: rem(10);
+    }
+  }
+
+  &__actions {
+    height: 100%;
+    align-items: end;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: rem(20);
+
+    @include laptop {
+      column-gap: rem(10);
+    }
+  }
+}

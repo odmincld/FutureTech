@@ -1,0 +1,90 @@
+@use "../helpers" as *;
+
+.tabs {
+  color: var(--color-grey-60);
+
+  &__header {
+    border-bottom: var(--border);
+
+    @include tablet {
+      overflow-x: auto;
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: rem(20);
+    padding-block: rem(50);
+
+    @include laptop {
+      padding-block: fluid(40, 20);
+      column-gap: rem(14);
+    }
+
+    @include tablet {
+      width: max-content;
+    }
+
+    &--compact {
+      display: inline-flex;
+      padding: rem(10);
+      background-color: var(--color-dark);
+      border-radius: rem(10);
+
+      @include mobile {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        width: 100%;
+      }
+
+      .tabs__button {
+        padding-block: rem(18);
+        padding-inline: fluid(35, 13);
+
+        @include laptop {
+          padding-block: rem(14);
+        }
+
+        &.is-active {
+          background-color: var(--color-dark-15);
+        }
+      }
+    }
+  }
+
+  &__button {
+    padding: fluid(30, 18) rem(11);
+    border: var(--border);
+    border-radius: rem(8);
+    color: var(--color-grey-60);
+    background-color: transparent;
+    font-size: rem(18);
+
+    @include laptop {
+      font-size: rem(14);
+    }
+
+    @include hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    &.is-active {
+      background-color: var(--color-dark-10);
+      color: var(--color-light);
+      font-weight: 500;
+      pointer-events: none;
+    }
+  }
+
+  &__content {
+    &:not(.is-active) {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline-offset: -1rem;
+    }
+  }
+}

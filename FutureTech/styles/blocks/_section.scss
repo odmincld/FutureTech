@@ -1,0 +1,58 @@
+@use "../helpers" as *;
+
+.section {
+  &__header {
+    padding-block: fluid(120, 40);
+    background-color: var(--color-dark-10);
+
+    &-info {
+      @include flex-column(16);
+      align-items: start;
+
+      @include laptop {
+        row-gap: rem(10);
+      }
+    }
+
+    &-inner {
+      &:has(.section__actions),
+      &:has(.section__link) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 2rem;
+
+        @include mobile {
+          flex-direction: column;
+          row-gap: rem(30);
+          align-items: center;
+        }
+      }
+
+      &:has(.section__actions) {
+        @include tablet {
+          flex-direction: column;
+          row-gap: rem(30);
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &__body {
+    border-block: var(--border);
+  }
+
+  &__link {
+    @include mobile {
+      width: 100%;
+      max-width: rem(360);
+    }
+  }
+
+  &__actions {
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

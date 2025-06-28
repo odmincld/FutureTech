@@ -1,0 +1,6 @@
+@use "../helpers" as *;
+
+.accordion-group {
+  @include flex-column(30);
+  row-gap: fluid(30, 20);
+}

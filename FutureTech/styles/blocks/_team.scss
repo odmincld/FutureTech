@@ -1,0 +1,36 @@
+@use "../helpers" as *;
+
+.team {
+  --person-image-size: #{rem(60)};
+
+  display: flex;
+
+  border-radius: rem(100);
+  background-color: var(--color-dark-10);
+  padding: rem(10);
+  align-items: center;
+  border: var(--border);
+
+  @include laptop {
+    padding: rem(8);
+  }
+
+  &__person {
+    width: var(--person-image-size);
+    border-radius: 50%;
+    border: rem(2) solid var(--color-dark-40);
+    background-color: var(--color-dark-15);
+
+    @include laptop {
+      --person-image-size: #{rem(50)};
+      border: rem(1) solid var(--color-dark-40);
+    }
+    @include mobile {
+      --person-image-size: #{rem(40)};
+    }
+
+    &:not(:first-child) {
+      margin-left: calc(var(--person-image-size) / 4 * -1);
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@use "../helpers" as *;
+
+.blog-card {
+  display: grid;
+  grid-template-columns: 24% 1fr auto;
+  column-gap: rem(50);
+  align-items: center;
+  padding-block: fluid(80, 40);
+
+  @include laptop {
+    column-gap: fluid(40, 28);
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr auto;
+    row-gap: rem(30);
+  }
+
+  &__body {
+    row-gap: fluid(30, 20);
+
+    @include flex-column(30);
+
+    @include tablet {
+      order: 1;
+      grid-column: span 2;
+    }
+  }
+
+  &__date {
+    @include fluid-text(20, 16);
+
+    font-weight: 600;
+  }
+
+  &__info {
+    display: grid;
+    row-gap: fluid(10, 4);
+  }
+}

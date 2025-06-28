@@ -1,0 +1,76 @@
+@use "../helpers" as *;
+
+.metrics {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: rem(10);
+    padding: rem(50);
+
+    @include laptop {
+      padding-block: rem(30);
+      padding-inline: rem(40);
+      row-gap: rem(2);
+    }
+
+    @include tablet {
+      padding-block: rem(20);
+      padding-inline: rem(20);
+      row-gap: rem(0);
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:not(:last-child) {
+      border-right: var(--border);
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__value {
+    font-weight: 600;
+  }
+
+  &__sign {
+    color: var(--color-accent);
+  }
+
+  &--4-cols {
+    .metrics__list {
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .metrics__item {
+      padding-block: rem(80);
+      padding-inline: rem(10);
+
+      @include laptop {
+        padding-block: fluid(60, 20);
+      }
+
+      @include tablet {
+        &:nth-child(even) {
+          @include full-vw-line(bottom, auto, 100%, 50%);
+
+          border-right: none;
+        }
+      }
+    }
+  }
+}

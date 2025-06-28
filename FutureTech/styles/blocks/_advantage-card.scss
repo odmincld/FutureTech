@@ -1,0 +1,34 @@
+@use "../helpers" as *;
+
+.advantage-card {
+  @include flex-column(30);
+
+  @include laptop {
+    row-gap: rem(20);
+  }
+
+  @include mobile {
+    row-gap: rem(10);
+  }
+
+  &__image {
+    @include laptop {
+      width: rem(40);
+    }
+
+    @include mobile {
+      width: rem(30);
+      margin-bottom: rem(6);
+    }
+  }
+
+  &__link {
+    @include flex-column(4);
+  }
+
+  &__details {
+    @include fluid-text(20, 14);
+
+    font-family: var(--font-family-accent);
+  }
+}

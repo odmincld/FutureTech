@@ -629,7 +629,7 @@ button[title]::before {
 .header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 200;
   animation-name: scrolling-header;
   animation-fill-mode: both;
   animation-timeline: scroll();

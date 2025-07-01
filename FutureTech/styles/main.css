@@ -3080,4 +3080,8 @@ button[title]::before {
   border-bottom: var(--border);
 }
 
+.section{
+  overflow-x: hidden;
+}
+
 /*# sourceMappingURL=main.css.map */

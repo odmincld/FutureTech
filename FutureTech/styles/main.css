@@ -3080,7 +3080,7 @@ button[title]::before {
   border-bottom: var(--border);
 }
 
-.section{
+html, body {
   overflow-x: hidden;
 }
 
